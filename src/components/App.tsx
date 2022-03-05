@@ -3,13 +3,15 @@ import './App.scss'
 
 // Themes
 import crimson from './themes/crimson/CV'
+import elegantBlack from './themes/elegantBlack/CV'
 
 const themes = {
   crimson,
+  elegantBlack,
 }
 
 function App() {
-  const currentTheme = 'crimson'
+  const currentTheme = 'elegantBlack'
   const Component = themes[currentTheme]
 
   return (
