@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fontlibrary.org/face/aileron");
+
+/* dimensions */
+
+$unit: 4px;
+
+$u1: 1 * $unit;
+$u2: 2 * $unit;
+$u4: 4 * $unit;
+$u8: 8 * $unit;
+
+$ph: 6 * $unit;
+
+$sidebar-width: 75 * $unit;
+
+/* colors */
+
+$white: #ffffff;
+
+$red-100: #460000;
+$red-300: #9f0000;
+$red-500: #cc0000;
+$red-900: #ff8c83;
+
+$grey-100: #1e1e1e;
+$grey-300: #3c3c3c;
+$grey-500: #848484;
+
+
+/* typography */
+
+html {
+  line-height: unset;
+}
+
+.font-header {
+  font-family: 'AileronHeavy';
+}
+
+.font-text {
+  font-family: 'Roboto';
+}
+
+@mixin header-box() {
+  font-size: 20pt;
+  font-family: 'AileronHeavy';
+  padding-top: $u2;
+  padding-bottom: $u2;
+}
+
+@mixin padding-vertical() {
+  padding-top:    $u4;
+  padding-bottom: $u4;
+}
+
+@mixin date() {
+  font-weight: bold;
+  font-size: 10pt;
+  font-variant-numeric: tabular-nums;
+  color: $red-300;
+}
+
+a {
+  text-decoration: underline;
+}
+
+/* layout */
+
+body {
+  font-family: 'Roboto';
+}
+
+.sheet {
+  padding: (2 * $unit) 0;
+  background: $red-300;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* Header */
+
+.header {
+  padding: $ph $ph;
+  display: flex;
+  flex-direction: row;
+  color: $grey-500;
+  background-color: $grey-100;
+}
+.header__left {
+  flex: 0 0 auto;
+  width: $sidebar-width;
+}
+.header__name {
+  color: $white;
+  font-size: 24pt;
+  font-family: 'AileronHeavy';
+}
+.header__title {
+  font-size: 12.5pt;
+  font-family: 'AileronThin';
+}
+.header__right {
+  opacity: 0.6;
+  font-size: 11pt;
+  & > * {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    & > svg {
+      margin-right: $u2;
+    }
+    &:not(:last-child) {
+      margin-bottom: $unit / 2;
+    }
+  }
+}
+
+
+/* Sidebar */
+
+@mixin sidebar-header {
+  font-family: 'AileronHeavy';
+  font-size: 16pt;
+  text-transform: uppercase;
+  opacity: 40%;
+  border-bottom: 1px solid currentColor;
+  @apply mt-4;
+  @apply mb-4;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: $sidebar-width;
+  & > * {
+    padding-left:  $ph;
+    padding-right: $ph;
+  }
+
+  color: $red-900;
+  font-family: 'AileronRegular';
+  font-size: 12.5pt;
+}
+.sidebar__skills {
+  color: $grey-500;
+  background-color: $grey-300;
+  @include padding-vertical;
+}
+.sidebar__summary {
+  @include padding-vertical;
+}
+
+.skill {
+  display: flex;
+  flex-direction: row;
+  &:not(:last-child) {
+    margin-bottom: $unit / 2;
+  }
+}
+.skill__name {
+  flex: 1;
+  font-size: 12.5pt;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.skill__stars {
+  display: flex;
+  flex-direction: row;
+}
+.star {
+  padding: 1px;
+  color: $grey-500;
+  &.active {
+    color: $red-500;
+  }
+}
+
+.sidebar__other__header {
+  color: $red-300;
+  background-color: $red-900;
+  @include header-box;
+}
+.sidebar__other__content {
+  flex: 1;
+  color: $red-900;
+  @include padding-vertical;
+}
+
+.sidebar__languages {
+  background-color: $red-100;
+  @include padding-vertical;
+}
+.language {
+  display: flex;
+  flex-direction: row;
+  font-size: 14pt;
+}
+.language__name {
+  flex: 1;
+  text-align: right;
+  padding-right: 2 * $unit;
+  color: $red-300;
+  font-family: 'AileronBold';
+}
+.language__level {
+  flex: 1;
+  text-align: left;
+  color: $red-900;
+  font-family: 'AileronLight';
+}
+
+
+/* Summary */
+
+.Summary__header {
+  @include sidebar-header;
+}
+.Summary__content {
+  font-family: 'Roboto';
+  font-size: 13pt;
+  line-height: 1.2;
+}
+
+/* Contact */
+
+.Contact__header {
+  @include sidebar-header;
+}
+.Contact__label {
+  text-transform: uppercase;
+}
+
+
+/* Main */
+
+.main {
+  flex: 1;
+  background-color: $white
+}
+
+/* Education  */
+
+.education {
+  @apply mb-2;
+}
+.education__header {
+  @include header-box;
+  padding: $u2 $ph;
+  margin-bottom: $u2;
+}
+.education__content {
+  padding: 0 $ph;
+}
+
+.education__item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: $u4;
+  }
+  font-family: 'Roboto';
+}
+.education__left {
+  flex: 1;
+}
+.education__degree {
+  font-weight: bold;
+  font-size: 12pt;
+  @apply mb-0.5;
+}
+.education__place {
+  font-style: italic;
+  font-size: 11pt;
+  color: $grey-500;
+}
+.education__date {
+  @include date;
+}
+
+
+/* Experience  */
+
+.experience__header {
+  @include header-box;
+  padding: $u2 $ph;
+  margin-bottom: $u4;
+}
+.experience__content {
+  padding: 0 $ph;
+}
+
+
+/* Experience item */
+
+.experience__item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  &:not(:last-child) {
+    margin-bottom: $u4;
+  }
+  font-family: 'Roboto';
+}
+.experience__left {
+  flex: 1;
+}
+.experience__title {
+  margin-bottom: $u1;
+}
+.experience__name {
+  font-weight: bold;
+  font-size: 12pt;
+}
+.experience__position {
+  font-weight: bold;
+  @apply text-sm;
+  color: $red-300;
+}
+.experience__link {
+  @apply text-xs;
+  @apply text-blue-800;
+  padding-top: 2px;
+}
+.experience__details {
+  font-size: 11pt;
+  color: $grey-300;
+  @apply mb-1;
+}
+.experience__date {
+  @include date;
+}
+.experience__tags {
+  margin-bottom: $u1;
+  color: $grey-500;
+  font-size: 10pt;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  & > span {
+    &:not(:last-child) {
+      margin-right: $u2;
+    }
+    &:not(:last-child)::after {
+      position: relative;
+      content: '—';
+      margin-left: $u2;
+    }
+  }
+}
