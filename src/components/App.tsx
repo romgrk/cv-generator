@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.scss'
 
 // Themes
 import crimson from './themes/crimson/CV'
@@ -13,7 +14,9 @@ function App() {
 
   return (
     <div className='App'>
-      <Component />
+      <div className='App__frame letter'>
+        <Component />
+      </div>
     </div>
   )
 }

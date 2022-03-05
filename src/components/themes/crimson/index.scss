@@ -31,21 +31,20 @@ $grey-500: #848484;
 
 /* typography */
 
-html {
-  line-height: unset;
-}
+$font-header: 'AileronHeavy';
+$font-text:   'Roboto';
 
 .font-header {
-  font-family: 'AileronHeavy';
+  font-family: $font-header;
 }
 
 .font-text {
-  font-family: 'Roboto';
+  font-family: $font-text;
 }
 
 @mixin header-box() {
   font-size: 20pt;
-  font-family: 'AileronHeavy';
+  font-family: $font-header;
   padding-top: $u2;
   padding-bottom: $u2;
 }
@@ -62,17 +61,19 @@ html {
   color: $red-300;
 }
 
-a {
+.CV a {
   text-decoration: underline;
 }
 
 /* layout */
 
 body {
-  font-family: 'Roboto';
+  font-family: $font-text;
 }
 
-.sheet {
+.CV {
+  width: 100%;
+  height: 100%;
   padding: (2 * $unit) 0;
   background: $red-300;
 
@@ -91,6 +92,7 @@ body {
 
 .header {
   padding: $ph $ph;
+  @apply py-4;
   display: flex;
   flex-direction: row;
   color: $grey-500;
@@ -103,7 +105,8 @@ body {
 .header__name {
   color: $white;
   font-size: 24pt;
-  font-family: 'AileronHeavy';
+  font-family: $font-header;
+  @apply -mb-2;
 }
 .header__title {
   font-size: 12.5pt;
@@ -129,8 +132,8 @@ body {
 /* Sidebar */
 
 @mixin sidebar-header {
-  font-family: 'AileronHeavy';
-  font-size: 16pt;
+  font-family: $font-header;
+  font-size: 15pt;
   text-transform: uppercase;
   opacity: 40%;
   border-bottom: 1px solid currentColor;
@@ -169,8 +172,8 @@ body {
 }
 .skill__name {
   flex: 1;
-  font-size: 12.5pt;
-  font-family: 'Roboto';
+  @apply text-sm;
+  font-family: $font-text;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -228,8 +231,7 @@ body {
   @include sidebar-header;
 }
 .Summary__content {
-  font-family: 'Roboto';
-  font-size: 13pt;
+  font-family: $font-text;
   line-height: 1.2;
 }
 
@@ -240,7 +242,9 @@ body {
 }
 .Contact__label {
   text-transform: uppercase;
+  @apply text-xs;
 }
+.Contact__value {}
 
 
 /* Main */
@@ -258,7 +262,7 @@ body {
 .education__header {
   @include header-box;
   padding: $u2 $ph;
-  margin-bottom: $u2;
+  @apply mb-2;
 }
 .education__content {
   padding: 0 $ph;
@@ -271,7 +275,7 @@ body {
   &:not(:last-child) {
     margin-bottom: $u4;
   }
-  font-family: 'Roboto';
+  font-family: $font-text;
 }
 .education__left {
   flex: 1;
@@ -279,7 +283,6 @@ body {
 .education__degree {
   font-weight: bold;
   font-size: 12pt;
-  @apply mb-0.5;
 }
 .education__place {
   font-style: italic;
@@ -309,24 +312,20 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
-  &:not(:last-child) {
-    margin-bottom: $u4;
-  }
-  font-family: 'Roboto';
+  font-family: $font-text;
 }
 .experience__left {
   flex: 1;
 }
 .experience__title {
-  margin-bottom: $u1;
 }
 .experience__name {
   font-weight: bold;
-  font-size: 12pt;
+  @apply text-sm;
 }
 .experience__position {
   font-weight: bold;
-  @apply text-sm;
+  @apply text-xs;
   color: $red-300;
 }
 .experience__link {
@@ -338,6 +337,7 @@ body {
   font-size: 11pt;
   color: $grey-300;
   @apply mb-1;
+  @apply text-sm;
 }
 .experience__date {
   @include date;

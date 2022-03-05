@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body, #root, .App {
+  width:  0;
+  height: 0;
+}

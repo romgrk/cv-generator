@@ -11,22 +11,24 @@ function CV() {
   const data = useData()
 
   return (
-    <section className="sheet padding-0mm">
-      <div className='header'>
-        <div className='header__left'>
-          <div className='header__name'>
-            {data.name}
+    <section className='sheet'>
+      <div className='CV'>
+        <div className='header'>
+          <div className='header__left'>
+            <div className='header__name'>
+              {data.name}
+            </div>
+            <div className='header__title'>
+              {data.title}
+            </div>
           </div>
-          <div className='header__title'>
-            {data.title}
+          <div className='header__right'>
           </div>
         </div>
-        <div className='header__right'>
+        <div className='content'>
+          <Sidebar />
+          <Main />
         </div>
-      </div>
-      <div className='content'>
-        <Sidebar />
-        <Main />
       </div>
     </section>
   );
@@ -76,7 +78,7 @@ function Skills() {
 function Summary() {
   const data = useData()
   return (
-    <div className='mb-8 Summary'>
+    <div className='mb-4 Summary'>
       <div className='Summary__header'>
         About
       </div>
@@ -90,20 +92,20 @@ function Summary() {
 function Contact({ className }) {
   const data = useData()
   return (
-    <div className={cx('Contact', className, 'space-y-6')}>
+    <div className={cx('Contact', className, 'space-y-4')}>
       <div className='Contact__header'>
         Contact
       </div>
       {data.contact.map(entry =>
         <div className='flex flex-row Contact__item'>
-          <div className='flex flex-col justify-center mr-4 text-xl align-center opacity-60'>
+          <div className='flex flex-col justify-start mr-4 text-md align-center opacity-60'>
             {entry.icon && <Icon name={entry.icon} />}
           </div>
           <div className='flex-1'>
-            <div className='mb-1 text-sm opacity-60 font-header Contact__label'>
+            <div className='opacity-60 font-header Contact__label'>
               {entry.name}
             </div>
-            <div className='font-text'>
+            <div className='font-text Contact__value'>
               {isURL(entry.value) ?
                 <a href={entry.value}>{entry.value}</a> :
                isEmail(entry.value) ?
@@ -161,7 +163,7 @@ function Experience() {
       <div className='experience__header'>
         Experiences & Personal projects
       </div>
-      <div className='experience__content'>
+      <div className='experience__content space-y-1'>
         {data.experience.concat(data.projects).map(item =>
           <div key={item.name} className='experience__item'>
             <div className='experience__left'>
