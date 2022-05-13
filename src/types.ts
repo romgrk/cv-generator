@@ -37,6 +37,13 @@ export type Experience = {
   link?: string,
 }
 
+export type Project = {
+  name: string,
+  description: string,
+  tags: string[],
+  link?: string,
+}
+
 
 export type CV = {
   name: string,
@@ -47,5 +54,5 @@ export type CV = {
   languages: Language[],
   education: Education[],
   experience: Experience[],
-  projects: Experience[],
+  projects: Project[],
 }

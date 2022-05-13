@@ -39,14 +39,14 @@ const data = {
 
   education: [
     {
-      degree: 'DEC, Comp. Sc. & Mathematics',
-      place: 'Collège de Maisonneuve',
-      date: '2009–2014',
-    },
-    {
       degree: 'Classes in Software Engineering',
       place: 'École de Technologie Supérieure',
       date: '2012–2013',
+    },
+    {
+      degree: 'DEC, Comp. Sc. & Mathematics',
+      place: 'Collège de Maisonneuve',
+      date: '2009–2014',
     },
   ],
 
@@ -77,18 +77,6 @@ const data = {
         `Creation of web and mobile apps (frontend and backend) with the in-house development products.`
       ],
       tags: ['SASS', 'Webpack', 'React', 'NodeJS'],
-    }
-  ],
-
-  projects: [
-    {
-      name: 'Mouvement Démocratie Nouvelle',
-      date: '2014, 2016',
-      position: 'Volunteer',
-      details: [
-        `Development of an interactive map with the Google Maps API and of an event creation system.`
-      ],
-      tags: ['JavaScript', 'HTML', 'PHP', 'SQL'],
     },
     {
       name: 'DEC Synthesis Project',
@@ -100,14 +88,20 @@ const data = {
       tags: ['Java', 'XML'],
       link: 'https://github.com/romgrk/physic_engine',
     },
+  ],
+
+  projects: [
     {
-      name: 'Apathy is Boring',
-      date: '2009',
-      position: 'Volunteer',
-      details: [
-        `Updates to an app to visualize data about canadian MPs, with synchronization with parliament's servers.`
-      ],
-      tags: ['Ruby', 'HTML', 'SQL'],
+      name: 'node-gtk',
+      link: 'https://github.com/romgrk/node-gtk',
+      description: 'GTK+ bindings for NodeJS, via GObject introspection',
+      tags: ['C++', 'JavaScript', 'V8', 'GLib'],
+    },
+    {
+      name: 'web-toolkit',
+      link: 'https://github.com/romgrk/web-toolkit',
+      description: 'A web UI framework based on GTK\'s Adwaita theme',
+      tags: ['JavaScript', 'React'],
     },
   ],
 } as CV

@@ -2,7 +2,7 @@ import React from 'react'
 import './App.scss'
 
 // Themes
-import crimson from './themes/crimson/CV'
+import crimson      from './themes/crimson/CV'
 import elegantBlack from './themes/elegantBlack/CV'
 
 const themes = {

@@ -44,8 +44,8 @@ $font-text:   'Lato';
 @mixin header-box() {
   font-size: 20pt;
   font-family: $font-header;
-  @apply py-2;
   border-bottom: 1px solid $grey-200;
+  @apply py-2;
 }
 
 @mixin padding-vertical() {
@@ -60,6 +60,11 @@ $font-text:   'Lato';
   width: 120px;
   @apply pl-6;
   @apply pr-4;
+}
+
+@mixin link() {
+  @apply text-xs;
+  @apply text-blue-800;
 }
 
 .CV a {
@@ -268,43 +273,20 @@ body {
 /* Education  */
 
 .education {
-  @apply mb-2;
 }
 .education__header {
   @include header-box;
   padding: 0 $ph;
   @apply py-2;
-  @apply mb-2;
+  @apply mb-4;
 }
 .education__content {
   padding: 0 $ph;
 }
 
-.education__item {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  &:not(:last-child) {
-    @apply mb-4;
-  }
-  font-family: $font-text;
+.education__content .experience__content {
+  @apply pb-4;
 }
-.education__left {
-  flex: 1;
-}
-.education__degree {
-  font-weight: bold;
-  font-size: 12pt;
-}
-.education__place {
-  font-style: italic;
-  font-size: 11pt;
-  color: $grey-500;
-}
-.education__date {
-  @include date;
-}
-
 
 /* Work  */
 
@@ -328,7 +310,7 @@ body {
   font-family: $font-text;
 }
 .experience__content {
-  @apply pb-4;
+  @apply pb-2;
 }
 .experience__title {
 }
@@ -338,12 +320,13 @@ body {
 .experience__position {
   @apply text-xs;
   color: $grey-500;
+  @apply mb-0.5;
 }
 .experience__link {
-  @apply text-xs;
-  @apply text-blue-800;
+  @include link();
   padding-top: 2px;
 }
+%base_description,
 .experience__details {
   color: $grey-300;
   @apply text-xs;
@@ -373,8 +356,8 @@ body {
   @apply text-xs;
 }
 .experience__tags {
+  @apply text-xs;
   color: $grey-500;
-  font-size: 10pt;
   & > span {
     &:not(:last-child) {
       @apply mr-1;
@@ -384,4 +367,45 @@ body {
       content: ',';
     }
   }
+}
+
+
+/* Projects  */
+
+.projects__header {
+  @include header-box;
+  @apply text-lg;
+  padding: 0 $ph;
+  @apply py-2;
+  @apply mt-4;
+  @apply mb-6;
+}
+.projects__content {
+  padding: 0 $ph;
+  @apply grid;
+  @apply grid-cols-2;
+}
+
+
+/* Project */
+
+.project {
+  @apply flex;
+  @apply flex-row;
+}
+.project__icon {
+  @apply p-1;
+  @apply pr-2;
+}
+.project__title {
+  @apply pb-1;
+}
+.project__link {
+  @include link();
+}
+.project__description {
+  @extend .experience__details;
+}
+.project__tags {
+  @extend .experience__tags;
 }

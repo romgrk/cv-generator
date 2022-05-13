@@ -149,6 +149,34 @@ function Main() {
     <div className='main'>
       <Education />
       <Work />
+      <Projects />
+    </div>
+  )
+}
+
+function Education() {
+  const data = useData()
+  return (
+    <div className='education'>
+      <div className='education__header'>
+        Education
+      </div>
+      <div className='education__content'>
+        {data.education.map(item =>
+
+          <div key={item.degree} className='experience'>
+            <div className='experience__date'>
+              <Icon name='RegCircle' className='experience__date__icon' />
+              {item.date}
+            </div>
+            <div className='experience__content'>
+              <div className='experience__name'>{item.degree}</div>
+              <div className='experience__position'>{item.place}</div>
+            </div>
+          </div>
+
+        )}
+      </div>
     </div>
   )
 }
@@ -158,10 +186,10 @@ function Work() {
   return (
     <div className='work'>
       <div className='work__header'>
-        Experiences & Personal projects
+        Experiences
       </div>
       <div className='work__content space-y-1'>
-        {data.experience.concat(data.projects).map(item =>
+        {data.experience.map(item =>
 
           <div key={item.name} className='flex flex-row experience'>
             <div className='experience__date'>
@@ -198,24 +226,40 @@ function Work() {
   )
 }
 
-function Education() {
+function Projects() {
   const data = useData()
   return (
-    <div className='education'>
-      <div className='education__header'>
-        Education
+    <div className='projects'>
+      <div className='projects__header'>
+        Open-source projects
       </div>
-      <div className='education__content'>
-        {data.education.map(item =>
+      <div className='projects__content'>
+        {data.projects.map(item =>
 
-          <div key={item.degree} className='experience'>
-            <div className='experience__date'>
-              <Icon name='RegCircle' className='experience__date__icon' />
-              {item.date}
+          <div key={item.name} className='project'>
+            <div className='project__icon'>
+              <Icon name='CodeBranch' />
             </div>
-            <div className='experience__content'>
-              <div className='experience__name'>{item.degree}</div>
-              <div className='experience__position'>{item.place}</div>
+            <div className='project__content'>
+              <div className='project__title'>
+                <div className='flex flex-col align-center'>
+                  <span className='project__name'>{item.name}</span>
+                  {item.link &&
+                    <a href={item.link} className='project__link'>
+                      {formatURL(item.link)}
+                    </a>
+                  }
+                </div>
+              </div>
+              <div>
+              </div>
+
+              <div className='project__description'>
+                {item.description}
+              </div>
+              <div className='project__tags'>
+                {item.tags.map(t => <span key={t}>{t}</span>)}
+              </div>
             </div>
           </div>
 

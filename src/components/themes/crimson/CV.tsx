@@ -164,7 +164,7 @@ function Experience() {
         Experiences & Personal projects
       </div>
       <div className='experience__content space-y-1'>
-        {data.experience.concat(data.projects).map(item =>
+        {data.experience.map(item =>
           <div key={item.name} className='experience__item'>
             <div className='experience__left'>
               <div className='experience__title'>
