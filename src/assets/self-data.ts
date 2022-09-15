@@ -19,17 +19,17 @@ const data = {
     { name: 'Node.JS',    value: 10 },
     { name: 'React',      value: 10 },
     { name: 'C/C++',      value: 8 },
+    { name: 'Rust',       value: 8 },
+    { name: 'Python',     value: 8 },
     { name: 'Assembly',   value: 6 },
     { name: 'Java',       value: 6 },
-    { name: 'Rust',       value: 4 },
-    { name: 'Go',         value: 4 },
   ],
 
   about:
-    `I have a wide range of interests, from micro-controllers and electronics
-    up to language parsing and web animation. I code for fun and a few of my personal
-    projects are available on github.
-    I am also comfortable in web design, as demonstrated by this document.`,
+    `I have a wide range of interests at all levels of the stack, from electronics
+    & OS programming up to language parsing & UI/UX dev.
+    I value simplicity above all other qualities in programming.
+    I also have an eye for web design, as demonstrated by this document.`,
 
   languages: [
     { name: 'French',  level: 'Excellent' },
@@ -54,11 +54,12 @@ const data = {
     {
       name: 'Comparative',
       date: '2021–now',
-      position: 'Software Engineer',
+      position: 'Senior Software Engineer',
       details: [
-        'Implementation of a performance-focused database in C++, and implementation of a React web app for our SaaS product.',
+        `Creation of a performance-focused analytics database in C++,
+        and creation of an Express/React web app from scratch for our SaaS product.`,
       ],
-      tags: ['C++', 'Typescript', 'React'],
+      tags: ['C++', 'Typescript', 'NodeJS', 'React'],
     },
     {
       name: 'Canadian Center for Computational Genomics (McGill)',
@@ -67,7 +68,7 @@ const data = {
       details: [
         'Creation of web apps and CLI tools for research projects in bioinformatics & genomic analysis.'
       ],
-      tags: ['NodeJS', 'Python', 'C'],
+      tags: ['NodeJS', 'Python', 'C', 'PostgreSQL'],
     },
     {
       name: 'Objectif Lune',
@@ -76,17 +77,7 @@ const data = {
       details: [
         `Creation of web and mobile apps (frontend and backend) with the in-house development products.`
       ],
-      tags: ['SASS', 'Webpack', 'React', 'NodeJS'],
-    },
-    {
-      name: 'DEC Synthesis Project',
-      date: '2012',
-      position: 'Student',
-      details: [
-        `Creation of a physic engine simulator in 2D, applied to solid objects and handling collisions, gravity, friction, etc.`
-      ],
-      tags: ['Java', 'XML'],
-      link: 'https://github.com/romgrk/physic_engine',
+      tags: ['React', 'NodeJS', 'Apache Cordova', 'Mobile'],
     },
   ],
 
@@ -102,6 +93,18 @@ const data = {
       link: 'https://github.com/romgrk/web-toolkit',
       description: 'A web UI framework based on GTK\'s Adwaita theme',
       tags: ['JavaScript', 'React'],
+    },
+    {
+      name: 'physic_engine',
+      link: 'https://github.com/romgrk/physic_engine',
+      description: `Creation of a physic simulator in 2D, applied to solid objects and handling collisions, gravity, friction, etc.`,
+      tags: ['Java', 'XML'],
+    },
+    {
+      name: 'fzy-lua-native',
+      link: 'https://github.com/romgrk/fzy-lua-native',
+      description: 'LuaJIT FFI bindings to use the natively compiled FZY implementation in Lua',
+      tags: ['LuaJIT', 'FFI', 'C'],
     },
   ],
 } as CV

@@ -384,8 +384,8 @@ body {
   padding: 0 $ph;
   @apply grid;
   @apply grid-cols-2;
+  @apply gap-y-4;
 }
-
 
 /* Project */
 
