@@ -57,16 +57,19 @@ const data = {
       position: 'Senior Software Engineer',
       details: [
         `Creation of a performance-focused analytics database in C++,
-        and creation of an Express/React web app from scratch for our SaaS product.`,
+        and of an Express/React SaaS platform, including integration & unit testing.
+        Designing the architecture of our servers & our devops/orchestration processes.`
       ],
-      tags: ['C++', 'Typescript', 'NodeJS', 'React'],
+      tags: ['C++', 'Typescript', 'NodeJS', 'React', 'Cypress', 'Jest'],
     },
     {
       name: 'Canadian Center for Computational Genomics (McGill)',
       date: '2017–2021',
       position: 'Full-stack Developer',
       details: [
-        'Creation of web apps and CLI tools for research projects in bioinformatics & genomic analysis.'
+        `Creation of web apps and CLI tools for research projects in bioinformatics & genomic analysis.
+        Architecture & development of a lab management software to track samples.
+        Deployment of software on HPC clusters (CalculQuébec).`
       ],
       tags: ['NodeJS', 'Python', 'C', 'PostgreSQL'],
     },
@@ -89,6 +92,12 @@ const data = {
       tags: ['C++', 'JavaScript', 'V8', 'GLib'],
     },
     {
+      name: 'pg_fzy',
+      link: 'https://github.com/romgrk/pg_fzy',
+      description: `A native C extension for the PostgreSQL database, to use the FZY algorithm`,
+      tags: ['C', 'PostgreSQL'],
+    },
+    {
       name: 'web-toolkit',
       link: 'https://github.com/romgrk/web-toolkit',
       description: 'A web UI framework based on GTK\'s Adwaita theme',
@@ -97,15 +106,15 @@ const data = {
     {
       name: 'physic_engine',
       link: 'https://github.com/romgrk/physic_engine',
-      description: `Creation of a physic simulator in 2D, applied to solid objects and handling collisions, gravity, friction, etc.`,
+      description: `A 2D physic simulator for solid objects and handling collisions, gravity, friction, etc.`,
       tags: ['Java', 'XML'],
     },
-    {
-      name: 'fzy-lua-native',
-      link: 'https://github.com/romgrk/fzy-lua-native',
-      description: 'LuaJIT FFI bindings to use the natively compiled FZY implementation in Lua',
-      tags: ['LuaJIT', 'FFI', 'C'],
-    },
+    // {
+    //   name: 'fzy-lua-native',
+    //   link: 'https://github.com/romgrk/fzy-lua-native',
+    //   description: 'LuaJIT FFI bindings to use the natively compiled FZY implementation in Lua',
+    //   tags: ['LuaJIT', 'FFI', 'C'],
+    // },
   ],
 } as CV
 
