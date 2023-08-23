@@ -19,6 +19,7 @@ specifiers:
   react: ^17.0.2
   react-dom: ^17.0.2
   react-icons: ^4.3.1
+  react-monaco-editor: ^0.47.0
   react-redux: ^7.2.6
   react-scripts: 5.0.0
   sass: ^1.49.9
@@ -42,6 +43,7 @@ dependencies:
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   react-icons: 4.3.1_react@17.0.2
+  react-monaco-editor: 0.47.0_c39f7e1b843c19489d8bd8e68fdd3314
   react-redux: 7.2.6_react-dom@17.0.2+react@17.0.2
   react-scripts: 5.0.0_613fb89ea2ed091c852cfa43c9ec72b8
   sass: 1.49.9
@@ -7883,6 +7885,18 @@ packages:
 
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+    dev: false
+
+  /react-monaco-editor/0.47.0_c39f7e1b843c19489d8bd8e68fdd3314:
+    resolution: {integrity: sha512-uXZMzYJReIHSA41Qjka2LZckEEawPQC0smpeUgkUvyaMiT8y9qFodIcQtLmSUj3g7gd/6W15a73jBs1d6sr+Mw==}
+    peerDependencies:
+      '@types/react': ^17.x
+      monaco-editor: ^0.31.1
+      react: ^17.x
+    dependencies:
+      '@types/react': 16.14.23
+      prop-types: 15.8.1
+      react: 17.0.2
     dev: false
 
   /react-redux/7.2.6_react-dom@17.0.2+react@17.0.2:
